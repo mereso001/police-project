@@ -12,6 +12,7 @@ if (isset($_POST['email'])) {
         //session
         session_start();
         $_SESSION['user'] = $user;
+
         header('location:home.php');
     } else {
         $error = "Wrong username or password";

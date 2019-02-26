@@ -17,8 +17,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="suspects.php">Suspects</a>
             </li>
+            <?php if ($_SESSION["user"]["type"]=="admin"):?>
             <li class="nav-item">
                 <a class="nav-link" href="admin.php">Admin</a>
+            </li>
+            <?php endif;?>
+            <li class="nav-item">
+                <a class="nav-link" href="release.php">Release</a>
             </li>
 
         </ul>

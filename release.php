@@ -28,7 +28,7 @@ require 'navbar.php';?>
             <th>GENDER</th>
             <th>DATE IN</th>
             <th>TYPE</th>
-            <th>ACTION</th>
+            <th>DATE RELEASED</th>
         </tr>
         </thead>
         <tbody>
@@ -42,7 +42,7 @@ require 'navbar.php';?>
         </tr>-->
         <?php
         require 'db.php';
-        $sql = "SELECT * FROM suspects where date_left like '0000-00-00%'";
+        $sql = "SELECT * FROM suspects where date_left  NOT like '0000-00-00%'";
         $results =mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($results))
         {
@@ -54,7 +54,7 @@ require 'navbar.php';?>
             <td>$gender</td>
             <td>$date</td>
             <td>$type</td>
-            <td> <a href='checkout.php?id=$id' class='btn btn-info btn-sm'>Release</a></td>
+            <td>$date_left</td>
         </tr>";
         }
         ?>
